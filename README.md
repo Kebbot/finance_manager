@@ -49,3 +49,55 @@
 ```bash
 git clone https://github.com/yourusername/finance-manager.git
 ```
+2. **Настройте OpenSERVER**
+- Добавьте домен finance.local в настройках
+- Укажите путь к папке проекта
+
+3. **Создайте базу данных**
+```sql 
+CREATE DATABASE finance_manager 
+CHARACTER SET utf8mb4 
+COLLATE utf8mb4_general_ci;
+```
+
+4. **Импортируйте структуру таблицы**
+```sql
+CREATE TABLE transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    type ENUM('income', 'expense') NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    description TEXT,
+    date DATE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+
+5. **Настройте подключение к БД**
+- Отредактируйте config/database.php:
+```php
+private $username = "root";      // Ваш пользователь MySQL
+private $password = "password";  // Ваш пароль MySQL
+```
+
+6. **Запустите приложение**
+- Запустите OpenSERVER
+- Перейдите по адресу: http://finance.local/
+
+## Структура проекта
+
+```text
+finance-manager/
+├── config/
+│   └── database.php          # Настройки подключения к БД
+├── ajax/
+│   ├── add_transaction.php   # Добавление транзакций
+│   ├── get_transactions.php  # Получение списка транзакций
+│   └── delete_transaction.php # Удаление транзакций
+├── css/
+│   └── style.css             # Стили приложения
+├── js/
+│   └── script.js             # Клиентская логика
+├── index.php                 # Главная страница
+└── README.md
+```
