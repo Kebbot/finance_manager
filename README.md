@@ -125,7 +125,8 @@ finance-manager/
 
 ### Клиент-серверное взаимодействие
 
-```graph LR
+```mermaid
+    graph LR
     A[Клиент] --> B[AJAX Request]
     B --> C[PHP Backend]
     C --> D[MySQL Database]
