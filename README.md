@@ -48,29 +48,4 @@
 1. **Клонируйте репозиторий**
 ```bash
 git clone https://github.com/yourusername/finance-manager.git
-
-2. **Настройте OpenSERVER*
-- Добавьте домен finance.local в настройках
-- Укажите путь к папке проекта
-
-3. **Создайте базу данных**
-CREATE DATABASE finance_manager 
-CHARACTER SET utf8mb4 
-COLLATE utf8mb4_general_ci;
-
-4. **Импортируйте структуру таблицы**
-CREATE TABLE transactions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    type ENUM('income', 'expense') NOT NULL,
-    amount DECIMAL(10,2) NOT NULL,
-    category VARCHAR(100) NOT NULL,
-    description TEXT,
-    date DATE NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-5. **Настройте подключение к БД**
-- Отредактируйте config/database.php:
-
-private $username = "root";      // Ваш пользователь MySQL
-private $password = "password";  // Ваш пароль MySQL
+```
