@@ -133,4 +133,4 @@ finance-manager/
     D --> C
     C --> E[JSON Response]
     E --> A
-    ```
+```
