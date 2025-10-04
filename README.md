@@ -180,8 +180,8 @@ finance-manager/
 
 ## 📸 Скриншоты
 
-![Главная страница](C:\Users\Admin\Documents\GitHub\finance_manager\Screenshot_63.png)
+![Главная страница](\Screenshot_63.png)
 *Интерфейс управления финансами*
 
-![Статистика](C:\Users\Admin\Documents\GitHub\finance_manager\Screenshot_64.png) 
+![Статистика](\Screenshot_64.png) 
 *Статистика в реальном времени*
